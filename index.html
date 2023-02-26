@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;600;700&family=League+Spartan:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Planets Fact Site</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <p class="logo">the planets</p>
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="#mercury">mercury</a></li>
+          <li><a class="nav-link" href="#venus">venus</a></li>
+          <li><a class="nav-link" href="#earth">earth</a></li>
+          <li><a class="nav-link" href="#mars">mars</a></li>
+          <li><a class="nav-link" href="#jupiter">jupiter</a></li>
+          <li><a class="nav-link" href="#saturn">saturn</a></li>
+          <li><a class="nav-link" href="#uranus">uranus</a></li>
+          <li><a class="nav-link" href="#neptune">neptune</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="flex-container">
+        <div class="image-container">
+          <img src="" alt="" id="planet-img" />
+          <img src="" alt="" id="img-overlay" />
+        </div>
+        <div class="column-container">
+          <h1 id="planet-name"></h1>
+          <p id="planet-info"></p>
+          <p id="source"></p>
+          <button id="overview-btn" class="btn">
+            <span>01</span>
+            <span>overview</span>
+          </button>
+          <button id="structure-btn" class="btn">
+            <span>02</span>
+            <span>internal structure</span>
+          </button>
+          <button id="geology-btn" class="btn">
+            <span>03</span>
+            <span>surface geology</span>
+          </button>
+        </div>
+      </div>
+      <section>
+        <div class="row-container">
+          <div class="column">
+            <h2>rotation time</h2>
+            <p id="rotation-time"></p>
+          </div>
+          <div class="column">
+            <h2>revolution time</h2>
+            <p id="revolution-time"></p>
+          </div>
+          <div class="column">
+            <h2>radius</h2>
+            <p id="radius"></p>
+          </div>
+          <div class="column">
+            <h2>average temp.</h2>
+            <p id="avg-temp"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>

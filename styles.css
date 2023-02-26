@@ -1,0 +1,203 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #070724;
+    color: #fff;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* typography */
+.logo {
+    text-transform: uppercase;
+    font-family: "Antonio", sans-serif;
+    font-weight: 400;
+    font-size: 1.75rem;
+    line-height: 2.264rem;
+    letter-spacing: -1.05px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 0.688rem;
+    line-height: 1.563rem;
+    letter-spacing: 1px;
+}
+
+#planet-name {
+    font-family: "Antonio", sans-serif;
+    text-transform: uppercase;
+    font-size: 5rem;
+    line-height: 6.47rem;
+    font-weight: 400;
+}
+
+#planet-info {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.563rem;
+    margin-top: 1.438rem;
+}
+
+#source {
+    font-family: "League Spartan", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.563rem;
+    opacity: 0.5;
+}
+
+#source a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn {
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid hsla(0, 0%, 100%, 0.2);
+    color: #fff;
+    margin-bottom: 1rem;
+    padding: 1em;
+}
+
+.btn span {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1.563rem;
+    letter-spacing: 2.57px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.column h2 {
+    text-transform: uppercase;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 0.688rem;
+    line-height: 1.563rem;
+    letter-spacing: 1px;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.column p {
+    margin-top: 0.25rem;
+    margin-bottom: 1.688rem;
+    text-transform: uppercase;
+    font-family: "Antonio", sans-serif;
+    font-weight: 400;
+    line-height: 3.235rem;
+    font-size: 2.5rem;
+    letter-spacing: -1.5px;
+}
+
+/* planet color classes */
+
+.mercury {
+    background-color: #419EBB;
+}
+
+.venus {
+    background-color: #EDA249;
+}
+
+.earth {
+    background-color: #6D2ED5;
+}
+
+.mars {
+    background-color: #D14C32;
+}
+
+.jupiter {
+    background-color: #D83A34;
+}
+
+.saturn {
+    background-color: #CD5120;
+}
+
+.uranus {
+    background-color: #1EC1A2;
+}
+
+.neptune {
+    background-color: #2D68F0;
+}
+
+/* layout */
+header {
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 2.063rem;
+}
+
+#planet-img {
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18.75rem;
+}
+
+.column-container {
+    width: 25%;
+}
+
+.row-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.875rem;
+    margin-top: 5.438rem;
+}
+
+.column {
+    border: 1px solid hsla(0, 0%, 100%, 0.2);
+    padding: 1.25rem 6.5rem 0 1.438rem;
+}
+
+.image-container {
+    position: relative;
+}
+
+#img-overlay {
+    position: absolute;
+    bottom: -35%;
+    right: 25%;
+    width: 50%;
+}
