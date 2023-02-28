@@ -12,19 +12,14 @@ const overviewBtn = document.getElementById("overview-btn");
 const structureBtn = document.getElementById("structure-btn");
 const geologyBtn = document.getElementById("geology-btn");
 const imgOverlay = document.getElementById("img-overlay");
+const toggleBtn = document.getElementById("toggle-btn");
+const mobileNav = document.getElementById("mobile-nav");
 
 document.addEventListener("DOMContentLoaded", function() {
   fetch("data.json")
     .then(response => response.json())
     .then(data => {
       const mercury = data[0];
-      const venus = data[1].name;
-      const earth = data[2].name;
-      const mars = data[3].name;
-      const jupiter = data[4].name;
-      const saturn = data[5].name;
-      const uranus = data[6].name;
-      const neptune = data[7].name;
 
       planetName.textContent = mercury.name;
       planetInfo.textContent = mercury.overview.content;
@@ -66,8 +61,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 imgOverlay.src = mercury.images.geology;
     });
 
+
     navLinks.forEach((link, index) => {
             link.addEventListener("click", function() {
+              if (mobileNav.classList.contains("active")) {
+                  toggleBtn.style.display = "none";
+                  mobileNav.classList.remove("active");
+                }
                 imgOverlay.src = "";
                 planetName.textContent = data[index].name;
                 planetInfo.textContent = data[index].overview.content;
@@ -77,14 +77,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 radius.textContent = data[index].radius;
                 avgTemp.textContent = data[index].temperature;
                 planetImg.src = data[index].images.planet;
+                
+                
+                buttons.forEach(button => {
+                      button.className = "";
+                      button.classList.add("btn");
+                    })
                 buttons[0].classList.add(data[index].name.toLowerCase());
 
                 overviewBtn.addEventListener("click", function() {
                     planetInfo.textContent = data[index].overview.content;
                     source.innerHTML = `Source: <a href="${data[index].overview.source}" target="_blank">Wikipedia &rarr;</a>`;
+                    buttons.forEach(button => {
+                      button.className = "";
+                      button.classList.add("btn");
+                    })
                     buttons[0].classList.add(`${data[index].name.toLowerCase()}`);
-                    buttons[1].classList.remove(`${data[index].name.toLowerCase()}`);
-                    buttons[2].classList.remove(`${data[index].name.toLowerCase()}`);
                     planetImg.src = data[index].images.planet;
                     imgOverlay.src = "";
                 })
@@ -92,9 +100,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 structureBtn.addEventListener("click", function() {
                     planetInfo.textContent = data[index].structure.content;
                     source.innerHTML = `Source: <a href="${data[index].structure.source}" target="_blank">Wikipedia &rarr;</a>`;
-                    buttons[0].classList.remove(`${data[index].name.toLowerCase()}`);
+                    buttons.forEach(button => {
+                      button.className = "";
+                      button.classList.add("btn");
+                    })
                     buttons[1].classList.add(`${data[index].name.toLowerCase()}`);
-                    buttons[2].classList.remove(`${data[index].name.toLowerCase()}`);
                     planetImg.src = data[index].images.internal;
                     imgOverlay.src = "";
                 })
@@ -102,16 +112,28 @@ document.addEventListener("DOMContentLoaded", function() {
                 geologyBtn.addEventListener("click", function() {
                     planetInfo.textContent = data[index].geology.content;
                     source.innerHTML = `Source: <a href="${data[index].geology.source}" target="_blank">Wikipedia &rarr;</a>`;
-                    buttons[0].classList.remove(`${data[index].name.toLowerCase()}`);
-                    buttons[1].classList.remove(`${data[index].name.toLowerCase()}`);
+                    buttons.forEach(button => {
+                      button.className = "";
+                      button.classList.add("btn");
+                    })
                     buttons[2].classList.add(`${data[index].name.toLowerCase()}`);
                     planetImg.src = data[index].images.planet;
                     imgOverlay.src = data[index].images.geology;
     });
+   
+    
         })
         })
+    })
+
+    toggleBtn.addEventListener("click", function(e) {
+        mobileNav.classList.add("active");
+        // e.target.style.display = "none";
+
+        
     })
     .catch(error => {
       console.log(error);
     });
 });
+
