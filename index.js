@@ -13,7 +13,8 @@ const structureBtn = document.getElementById("structure-btn");
 const geologyBtn = document.getElementById("geology-btn");
 const imgOverlay = document.getElementById("img-overlay");
 const toggleBtn = document.getElementById("toggle-btn");
-const mobileNav = document.getElementById("mobile-nav");
+const navMenu = document.getElementById("nav-menu");
+const closeBtn = document.getElementById("close-btn");
 
 document.addEventListener("DOMContentLoaded", function() {
   fetch("data.json")
@@ -61,13 +62,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 imgOverlay.src = mercury.images.geology;
     });
 
-
-    navLinks.forEach((link, index) => {
+navLinks.forEach((link, index) => {
             link.addEventListener("click", function() {
-              if (mobileNav.classList.contains("active")) {
-                  toggleBtn.style.display = "none";
-                  mobileNav.classList.remove("active");
-                }
+         
                 imgOverlay.src = "";
                 planetName.textContent = data[index].name;
                 planetInfo.textContent = data[index].overview.content;
@@ -124,16 +121,34 @@ document.addEventListener("DOMContentLoaded", function() {
     
         })
         })
+    
     })
 
-    toggleBtn.addEventListener("click", function(e) {
-        mobileNav.classList.add("active");
-        // e.target.style.display = "none";
-
-        
-    })
+    
     .catch(error => {
       console.log(error);
     });
 });
 
+
+toggleBtn.addEventListener("click", function(e) {
+        navMenu.classList.add("active");
+        e.target.classList.toggle("active");
+        closeBtn.classList.toggle("active");
+    })
+
+closeBtn.addEventListener("click", function(e) {
+  if (navMenu.classList.contains("active") && toggleBtn.classList.contains("active")) {
+    navMenu.classList.remove("active");
+    e.target.classList.toggle("active");
+    toggleBtn.classList.toggle("active");
+  }
+})
+
+navLinks.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    toggleBtn.classList.remove("active");
+    navMenu.classList.remove("active");
+    closeBtn.remove("active");
+}

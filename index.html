@@ -22,59 +22,49 @@
       <nav class="navbar">
         <p class="logo">the planets</p>
         <ul id="nav-menu" class="nav-menu">
-          <li><a class="nav-link" href="#mercury">mercury</a></li>
-          <li><a class="nav-link" href="#venus">venus</a></li>
-          <li><a class="nav-link" href="#earth">earth</a></li>
-          <li><a class="nav-link" href="#mars">mars</a></li>
-          <li><a class="nav-link" href="#jupiter">jupiter</a></li>
-          <li><a class="nav-link" href="#saturn">saturn</a></li>
-          <li><a class="nav-link" href="#uranus">uranus</a></li>
-          <li><a class="nav-link" href="#neptune">neptune</a></li>
+          <li class="row">
+            <span class="mobile-circle mercury-circle"></span
+            ><a class="nav-link" href="#mercury"> mercury</a
+            ><span class="symbol">></span>
+          </li>
+          <li class="row">
+            <span class="mobile-circle venus-circle"></span
+            ><a class="nav-link" href="#venus">venus</a
+            ><span class="symbol">></span>
+          </li>
+          <li class="row">
+            <span class="mobile-circle earth-circle"></span
+            ><a class="nav-link" href="#earth">earth</a
+            ><span class="symbol">></span>
+          </li>
+          <li class="row">
+            <span class="mobile-circle mars-circle"></span
+            ><a class="nav-link" href="#mars">mars</a
+            ><span class="symbol">></span>
+          </li>
+          <li class="row">
+            <span class="mobile-circle jupiter-circle"></span
+            ><a class="nav-link" href="#jupiter">jupiter</a
+            ><span class="symbol">></span>
+          </li>
+          <li class="row">
+            <span class="mobile-circle saturn-circle"></span
+            ><a class="nav-link" href="#saturn">saturn</a
+            ><span class="symbol">></span>
+          </li>
+          <li class="row">
+            <span class="mobile-circle uranus-circle"></span
+            ><a class="nav-link" href="#uranus">uranus</a
+            ><span class="symbol">></span>
+          </li>
+          <li class="row">
+            <span class="mobile-circle neptune-circle"></span
+            ><a class="nav-link" href="#neptune">neptune</a
+            ><span class="symbol">></span>
+          </li>
         </ul>
-
-        <div id="mobile-nav" class="mobile-nav">
-          <div class="row">
-            <div class="circle mercury"></div>
-            <a class="nav-link" href="#mercury">mercury</a>
-            <div>></div>
-          </div>
-          <div class="row">
-            <div class="circle venus"></div>
-            <a class="nav-link" href="#venus">venus</a>
-            <div>></div>
-          </div>
-          <div class="row">
-            <div class="circle earth"></div>
-            <a class="nav-link" href="#earth">earth</a>
-            <div>></div>
-          </div>
-          <div class="row">
-            <div class="circle mars"></div>
-            <a class="nav-link" href="#mars">mars</a>
-            <div>></div>
-          </div>
-          <div class="row">
-            <div class="circle jupiter"></div>
-            <a class="nav-link" href="#jupiter">jupiter</a>
-            <div>></div>
-          </div>
-          <div class="row">
-            <div class="circle saturn"></div>
-            <a class="nav-link" href="#saturn">saturn</a>
-            <div>></div>
-          </div>
-          <div class="row">
-            <div class="circle uranus"></div>
-            <a class="nav-link" href="#uranus">uranus</a>
-            <div>></div>
-          </div>
-          <div class="row">
-            <div class="circle neptune"></div>
-            <a class="nav-link" href="#neptune">neptune</a>
-            <div>></div>
-          </div>
-        </div>
-        <i class="fa-solid fa-bars" id="toggle-btn" role="navigation"></i>
+        <i class="fa-solid fa-bars" id="toggle-btn" role="menu"></i>
+        <i class="fa-solid fa-x close-btn" id="close-btn" role="menu"></i>
       </nav>
     </header>
     <main id="main">
@@ -91,16 +81,18 @@
           </div>
           <div class="btn-container">
             <button id="overview-btn" class="btn">
-              <span>01</span>
+              <span class="btn-number">01</span>
               <span>overview</span>
             </button>
             <button id="structure-btn" class="btn">
-              <span>02</span>
-              <span>internal structure</span>
+              <span class="btn-number">02</span>
+              <span class="hidden">internal </span>
+              <span>structure</span>
             </button>
             <button id="geology-btn" class="btn">
-              <span>03</span>
-              <span>surface geology</span>
+              <span class="btn-number">03</span>
+              <span>surface </span>
+              <span class="hidden">geology</span>
             </button>
           </div>
         </div>
